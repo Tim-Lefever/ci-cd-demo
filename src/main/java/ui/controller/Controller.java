@@ -46,9 +46,4 @@ public class Controller extends HttpServlet {
         view.forward(request, response);
 
     }
-
-    private String add(HttpServletRequest request, HttpServletResponse response) {
-        return "add.jsp";
-    }
-
 }

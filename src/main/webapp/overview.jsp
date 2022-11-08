@@ -27,7 +27,6 @@
                         <th>Voedsel</th>
                     </thead>
                     <tbody>
-                        <c:if test="$not empty animals"></c:if>
                     <c:forEach var="animal" items="${animals}">
                         <tr>
                             <td>${animal.name}
@@ -45,8 +44,10 @@
                 <p>Er zijn geen dieren </p>
             </c:otherwise>
         </c:choose>
-        <p>Het laatste dier dat je hebt toegevoegd heet ${last.name} </p>
-        <p>Het laatste dier dat je hebt toegevoegd heet ${sessionScope.lastAddedAnimal.name} </p>
+        <c:if test="${last != null}">
+            <p>Het laatste dier dat je hebt toegevoegd heet ${last.name}.</p>
+        </c:if>
+        <%--        <p>Het laatste dier dat je hebt toegevoegd heet ${sessionScope.lastAddedAnimal.name} </p>--%>
 
     </main>
     <jsp:include page="footer.jsp"/>
